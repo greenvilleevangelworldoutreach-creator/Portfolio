@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Min. Juhah F. Kanmoh II - Gospel Artist</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav .logo img {
+    max-height: 50px;
+    width: auto;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.hero .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.hero .location {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #1a1a2e;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    font-weight: bold;
+}
+
+.btn-secondary:hover {
+    background: #d4af37;
+    color: #1a1a2e;
+    transform: translateY(-2px);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a1a2e;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37 0%, transparent 100%);
+}
+
+/* About Section */
+#about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.interest-tag {
+    background: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: #1a1a2e;
+    font-weight: 500;
+}
+
+/* Music/Portfolio Section */
+#portfolio {
+    background: #f8f9fa;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.portfolio-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+}
+
+.portfolio-content h3 {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Services Section */
+#services {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background: #f8f9fa;
+    border-top: 4px solid #d4af37;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Skills Section */
+#skills {
+    background: #f8f9fa;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.skill-category h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.skill-list li::before {
+    content: '✓ ';
+    color: #d4af37;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #d4af37;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-item {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.contact-item h3 {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #e0e0e0;
+}
+
+.contact-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+footer {
+    background: #0f0f1e;
+    color: #888;
+    text-align: center;
+    padding: 2rem;
+    border-top: 2px solid #d4af37;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #d4af37;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffd700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="container">
+        <div class="logo"><img src="logo.jpg" alt="Min. Juhah F. Kanmoh II Logo">Min. Juhah F. Kanmoh II</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Music</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Min. Juhah F. Kanmoh II</h1>
+        <p class="subtitle">Gospel Artist & Musician</p>
+        <p class="location">📍 Monrovia, Liberia</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="#portfolio" class="btn btn-secondary">Listen to Music</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="Pro5.jpg" alt="Min. Juhah F. Kanmoh II - Gospel Artist">
+            </div>
+            <div class="about-text">
+                <h3>Gospel Artist & Minister</h3>
+                <p>
+                    Welcome! I am a passionate gospel artist, musician, and minister based in Monrovia, Liberia. With a heart dedicated to spreading the message of faith through music, I blend traditional gospel elements with modern sounds to create inspired musical experiences.
+                </p>
+                <p>
+                    As an artist, musician, and student, I am committed to continuous growth and excellence in my craft. My music is a reflection of my spiritual journey and my desire to touch lives through meaningful melodies and powerful messages.
+                </p>
+                <p>
+                    Beyond music, I am deeply involved in church ministry and community outreach, aiming to make a positive impact through the arts, education, and technology. I believe in the transformative power of music and its ability to inspire, uplift, and bring people together.
+                </p>
+                <div class="interests">
+                    <span class="interest-tag">🎵 Music Production</span>
+                    <span class="interest-tag">✨ Gospel Ministry</span>
+                    <span class="interest-tag">💻 Technology</span>
+                    <span class="interest-tag">📚 Education</span>
+                    <span class="interest-tag">🎨 Arts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio/Music Section -->
+<section id="portfolio">
+    <div class="container">
+        <h2>Featured Music & Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image">🎼</div>
+                <div class="portfolio-content">
+                    <h3>Gospel Singles</h3>
+                    <p>Explore my collection of original gospel singles and cover arrangements. Each track is carefully crafted to inspire and uplift.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🎧</div>
+                <div class="portfolio-content">
+                    <h3>Live Performances</h3>
+                    <p>Experience recordings from my live ministry performances, worship sessions, and church events across Monrovia.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🎹</div>
+                <div class="portfolio-content">
+                    <h3>Instrumentals</h3>
+                    <p>Browse my collection of keyboard and instrumental tracks perfect for worship, meditation, and reflection.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🎬</div>
+                <div class="portfolio-content">
+                    <h3>Music Videos</h3>
+                    <p>View music videos and visual content from my latest projects and performances.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🎙️</div>
+                <div class="portfolio-content">
+                    <h3>Playlists</h3>
+                    <p>Curated playlists featuring gospel, worship music, and spiritual content for various occasions.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">📂</div>
+                <div class="portfolio-content">
+                    <h3>Collaborations</h3>
+                    <p>Special projects and collaborative works with other artists and musicians in the gospel community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <h2>My Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎤</div>
+                <h3>Live Performances</h3>
+                <p>Professional gospel performances for church services, conferences, weddings, and community events. Custom setlists tailored to your occasion.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎵</div>
+                <h3>Music Ministry</h3>
+                <p>Lead worship services, prayer sessions, and spiritual music events. Dedicated to creating meaningful worship experiences.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Music Instruction</h3>
+                <p>Personalized music lessons including vocal training, keyboard, and music theory for students of all levels.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>Recording & Production</h3>
+                <p>Professional music recording, mixing, and production services for gospel and worship music projects.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Tech & Content</h3>
+                <p>Social media content creation, digital portfolio development, and online ministry presence optimization.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Creative Consulting</h3>
+                <p>Arts and creative consultation for churches, ministries, and cultural organizations seeking to enhance their programs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>🎵 Musical Skills</h3>
+                <ul class="skill-list">
+                    <li>Vocal Performance</li>
+                    <li>Keyboard & Piano</li>
+                    <li>Music Arrangement</li>
+                    <li>Worship Leading</li>
+                    <li>Gospel Genre Expertise</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>💻 Technical Skills</h3>
+                <ul class="skill-list">
+                    <li>Programming</li>
+                    <li>Digital Content Creation</li>
+                    <li>Social Media Management</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>📚 Professional Skills</h3>
+                <ul class="skill-list">
+                    <li>Event Planning</li>
+                    <li>Ministry Leadership</li>
+                    <li>Teaching & Mentoring</li>
+                    <li>Community Outreach</li>
+                    <li>Artist Management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <p>Interested in booking a performance, collaborating on a project, or learning more about my music? I'd love to hear from you!</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>+231 881 66 6269</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p>minkanmohjuhahfii@email.com</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Min. Juhah F. Kanmoh II | Gospel Artist | Monrovia, Liberia</p>
+    <div class="social-links">
+        <a href="#" title="Facebook">Facebook</a>
+        <a href="#" title="YouTube">YouTube</a>
+        <a href="#" title="Instagram">Instagram</a>
+        <a href="#" title="Twitter">Twitter</a>
+        <a href="#" title="Spotify">Spotify</a>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.9rem;">Spreading the Gospel through Music & Arts</p>
+</footer>
+
+<script>
+function handleSubmit(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:juhahkanmoh@email.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+    
+    window.location.href = mailtoLink;
+}
+</script>
+
+</body>
+</html>
